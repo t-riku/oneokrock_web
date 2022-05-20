@@ -309,6 +309,15 @@ section + section {
   background-color: transparent;
 }
 
+.news {
+  background: rgb(24, 1, 4);
+  background: linear-gradient(90deg, rgb(24, 1, 4) 0%, rgb(85, 19, 3) 52%, rgb(233, 59, 5) 100%);
+}
+.news .team-sentence h2,
+.news .team-sentence p {
+  color: #fff;
+}
+
 @media (max-width: 1199px) {
   .toppage .toppage-box .title {
     left: 22%;
