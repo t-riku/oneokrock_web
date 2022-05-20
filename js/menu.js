@@ -18,11 +18,13 @@ upButton.addEventListener("click", function () {
 // ハンバーガーメニュー
 const menuToggle = document.querySelector(".toggle");
 const topPage = document.querySelector(".toppage-box");
+const menuZ = document.querySelector(".menu");
 
 menuToggle.addEventListener("click", function () {
   // activeにする
   menuToggle.classList.toggle("active");
   topPage.classList.toggle("active");
+  menuZ.classList.toggle("active");
 });
 
 // topPage.addEventListener("click", function () {

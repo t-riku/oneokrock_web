@@ -63,6 +63,7 @@ section + section {
 
 .toppage {
   position: relative;
+  z-index: 2;
 }
 .toppage .toppage-box {
   background-color: #ccc;
@@ -75,6 +76,7 @@ section + section {
 .toppage .toppage-box.active {
   position: absolute;
   right: 300px;
+  z-index: -2;
 }
 .toppage .toppage-box.active::after {
   content: "";
@@ -84,7 +86,7 @@ section + section {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 10;
 }
 .toppage .toppage-box header {
   position: absolute;
@@ -204,12 +206,30 @@ section + section {
   right: 0;
   width: 300px;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
   /*現在地とhoverの設定*/
+}
+.menu.active {
+  z-index: 2;
+}
+.menu ul {
+  font-size: 24px;
+}
+.menu ul li {
+  margin-bottom: 1rem;
+}
+.menu ul li a {
+  color: #111;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.menu ul li a:hover {
+  color: #ec330e;
 }
 .menu .gnavi li a {
   /*線の基点とするためrelativeを指定*/
@@ -231,24 +251,12 @@ section + section {
   /*X方向0、Y方向1*/
   transform-origin: left top;
   /*左上基点*/
+  z-index: -1;
 }
 .menu .gnavi li.current a::after,
 .menu .gnavi li a:hover::after {
   transform: scale(1, 1);
   /*X方向にスケール拡大*/
-}
-.menu ul {
-  font-size: 24px;
-}
-.menu ul li {
-  margin-bottom: 1rem;
-}
-.menu ul li a {
-  color: #111;
-  transition: all 0.3s ease;
-}
-.menu ul li a:hover {
-  color: #ec330e;
 }
 
 .biography {
