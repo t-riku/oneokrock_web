@@ -24,3 +24,31 @@ menuToggle.addEventListener("click", function () {
   menuToggle.classList.toggle("active");
   topPage.classList.toggle("active");
 });
+
+topPage.addEventListener("click", function () {
+  // if (menuToggle.hasClass("active")) {
+  //   menuToggle.removeClass("active");
+  //   topPage.removeClass("active");
+  // }
+  if (menuToggle.hasClass("active")) {
+    menuToggle.classList.toggle("active");
+    topPage.classList.toggle("active");
+  }
+});
+
+// topPage.addEventListener("click", (e) => {
+//   if (!e.target.closest(".toggle")) {
+//     //ここに外側をクリックしたときの処理
+//     menuToggle.classList.toggle("active");
+//     topPage.classList.toggle("active");
+//   }
+// });
+
+// jQuery(document).ready(function ($) {
+//   $(".toppage").click(function () {
+//     //ここでnavの部分がactiveクラスを持っているか確認
+//     if (menuToggle.hasClass("active")) {
+//       $(".toggle").removeClass("active");
+//     }
+//   });
+// });

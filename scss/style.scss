@@ -44,6 +44,11 @@ li {
   &.active {
     position: absolute;
     right: 300px;
+
+    &::after {
+      @include overlay(rgba($color: #000000, $alpha: 0.8));
+      z-index: 20;
+    }
   }
 
   header {
@@ -247,6 +252,7 @@ li {
   height: 100%;
   z-index: -1;
   @include middle();
+  background-color: #fff;
 
   // 動くWebデザイン帳
   // 左から右に線が伸びる
@@ -320,6 +326,9 @@ li {
   .toppage {
     header {
       padding-right: 4px;
+      .toggle {
+        z-index: 100;
+      }
     }
 
     .title {
@@ -336,6 +345,11 @@ li {
       right: 2rem;
     }
   }
+  // .menu {
+  //   width: 100%;
+  //   z-index: 10;
+  //   background-color: #fff;
+  // }
 }
 
 // スマホ版
