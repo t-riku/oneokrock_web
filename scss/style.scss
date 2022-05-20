@@ -30,14 +30,40 @@ li {
   list-style: none;
 }
 
+p {
+  margin: 0;
+}
+
 h2,
 h3 {
   font-weight: 540;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
+h6 {
+  color: #ec330e;
+  font-weight: 420;
+  font-size: 2rem;
+}
+
 section + section {
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 120px;
+}
+
+.card-effect {
+  box-shadow: $boxshadow;
+  background-color: #fff;
+  padding: 25px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: none;
+    transform: translateY(5px);
+  }
 }
 
 // toppage section
@@ -136,7 +162,7 @@ section + section {
     }
 
     .title {
-      z-index: 10;
+      // z-index: 10;
       position: absolute;
       top: 50%;
       left: 30%;
@@ -250,15 +276,18 @@ section + section {
 
 // biography section
 .biography {
-  width: 100%;
-  background: rgb(24, 1, 4);
-  background: linear-gradient(
-    90deg,
-    rgba(24, 1, 4, 1) 0%,
-    rgba(85, 19, 3, 1) 52%,
-    rgba(233, 59, 5, 1) 100%
-  );
+  min-height: 60rem;
+  background-image: url(/images/oneokrock14.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: #fff;
+
+  .layer {
+    transform: translateY(3rem);
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 55rem;
+  }
 
   h2 {
     font-size: 4rem;
@@ -266,6 +295,59 @@ section + section {
 
   p {
     font-size: 2rem;
+    line-height: 3.4rem;
+  }
+}
+
+// team section
+.team {
+  background: rgb(24, 1, 4);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 1, 4, 1) 0%,
+    rgba(85, 19, 3, 1) 52%,
+    rgba(233, 59, 5, 1) 100%
+  );
+
+  .team-sentence {
+    h2,
+    p {
+      color: #fff;
+    }
+  }
+
+  .team-member {
+    img {
+      width: 125px;
+      height: 125px;
+      border-radius: 100px;
+      object-fit: cover;
+    }
+
+    .insta-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        width: 34px;
+        height: 34px;
+        background-color: $primary;
+        border: 1.3px solid $primary;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        margin-left: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $primary;
+          background-color: transparent;
+        }
+      }
+    }
   }
 }
 
@@ -282,6 +364,25 @@ section + section {
       }
     }
   }
+
+  // biography section
+  .biography {
+    min-height: 60rem;
+
+    .layer {
+      transform: translateY(3rem);
+      height: 55rem;
+    }
+
+    h4 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.7rem;
+      line-height: 2.5rem;
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -296,6 +397,21 @@ section + section {
       }
     }
   }
+
+  // biography section
+  .biography {
+    min-height: 60rem;
+
+    .layer {
+      transform: translateY(3rem);
+      height: 55rem;
+    }
+
+    p {
+      font-size: 1.7rem;
+      line-height: 2.5rem;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -308,6 +424,25 @@ section + section {
           font-size: 5rem;
         }
       }
+    }
+  }
+
+  // biography section
+  .biography {
+    min-height: 60rem;
+
+    .layer {
+      transform: translateY(3rem);
+      height: 55rem;
+    }
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
   }
 }
@@ -340,6 +475,30 @@ section + section {
       }
     }
   }
+
+  // biography section
+  .biography {
+    min-height: 48rem;
+
+    .layer {
+      transform: translateY(0rem);
+      height: 48em;
+      padding: 0 2rem;
+    }
+
+    h6 {
+      font-size: 1.7rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+  }
 }
 
 // スマホ版
@@ -365,6 +524,26 @@ section + section {
       .sns {
         right: 1.5rem;
       }
+    }
+  }
+
+  // biography section
+  .biography {
+    min-height: 56rem;
+
+    .layer {
+      transform: translateY(0rem);
+      height: 56em;
+      padding: 0 2rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 2rem;
     }
   }
 }

@@ -17,7 +17,7 @@ upButton.addEventListener("click", function () {
 
 // ハンバーガーメニュー
 const menuToggle = document.querySelector(".toggle");
-const topPage = document.querySelector(".toppage");
+const topPage = document.querySelector(".toppage-box");
 
 menuToggle.addEventListener("click", function () {
   // activeにする
