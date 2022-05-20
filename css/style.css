@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&family=Zen+Antique&display=swap");
 * {
   margin: 0;
@@ -27,9 +28,16 @@ li {
 
 .toppage {
   background-color: #ccc;
+  position: absolute;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+.toppage.active {
+  position: absolute;
+  right: 300px;
 }
 .toppage header {
   position: absolute;
@@ -37,9 +45,36 @@ li {
   left: 0;
   width: 100%;
   z-index: 1000;
+  padding-right: 35px;
+}
+.toppage header .up-btn,
+.toppage header .mute-btn {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.toppage header .up-btn {
+  display: none;
+}
+.toppage header .up-btn.muted {
+  display: block;
+}
+.toppage header .mute-btn {
+  display: block;
+}
+.toppage header .mute-btn.muted {
+  display: none;
 }
 .toppage header .toggle {
   background: url(/images/menu.png);
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+}
+.toppage header .toggle.active {
+  background: url(/images/close.png);
   width: 60px;
   height: 60px;
   background-repeat: no-repeat;
@@ -67,12 +102,73 @@ li {
 }
 .toppage .title {
   z-index: 10;
+  /*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+  /*スクロールダウン全体の場所*/
+  /*下からの距離が変化して全体が下→上→下に動く*/
+  /*Scrollテキストの描写*/
+  /* 矢印の描写 */
 }
 .toppage .title h1 {
   font-size: 8rem;
   font-weight: 1000;
   text-shadow: #000 1px 3px 6px;
   letter-spacing: -0.3rem;
+}
+.toppage .title .scrolldown4 {
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  bottom: 1%;
+  right: 50%;
+  /*矢印の動き1.5秒かけて永遠にループ*/
+  animation: arrowmove 1.5s ease-in-out infinite;
+}
+@keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: 2%;
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+.toppage .title .scrolldown4 span {
+  /*描画位置*/
+  position: absolute;
+  left: -20px;
+  bottom: 10px;
+  /*テキストの形状*/
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+.toppage .title .scrolldown4:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: -3px;
+  /*矢印の形状*/
+  width: 1px;
+  height: 18px;
+  background: #eee;
+  transform: skewX(-20deg);
+}
+.toppage .title .scrolldown4:after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*矢印の形状*/
+  width: 1px;
+  height: 45px;
+  background: #eee;
 }
 .toppage .copyright {
   position: absolute;
@@ -99,12 +195,107 @@ li {
 .toppage .sns ul li {
   padding-bottom: 1rem;
 }
-.toppage .sns ul li i {
+.toppage .sns ul li a {
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+.toppage .sns ul li a:hover {
+  transform: translateY(-4px);
+}
+.toppage .sns ul li a i {
   font-size: 2rem;
 }
-.toppage .menu {
+.toppage .sns ul li a i:hover {
+  color: #ec330e;
+}
+
+.menu {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
   z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*現在地とhoverの設定*/
+}
+.menu .gnavi li a {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+.menu .gnavi li a::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  /*線の形状*/
+  width: 90%;
+  height: 2px;
+  background: #ec330e;
+  /*アニメーションの指定*/
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  /*X方向0、Y方向1*/
+  transform-origin: left top;
+  /*左上基点*/
+}
+.menu .gnavi li.current a::after,
+.menu .gnavi li a:hover::after {
+  transform: scale(1, 1);
+  /*X方向にスケール拡大*/
+}
+.menu ul {
+  font-size: 24px;
+}
+.menu ul li {
+  margin-bottom: 1rem;
+}
+.menu ul li a {
+  color: #111;
+  transition: all 0.3s ease;
+}
+.menu ul li a:hover {
+  color: #ec330e;
+}
+
+@media (max-width: 992px) {
+  .toppage .title h1 {
+    font-size: 7rem;
+  }
+}
+@media (max-width: 768px) {
+  .toppage .title h1 {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 576px) {
+  .toppage header {
+    padding-right: 4px;
+  }
+  .toppage .title h1 {
+    font-size: 4rem;
+  }
+  .toppage .copyright {
+    left: -11%;
+  }
+  .toppage .sns {
+    right: 2rem;
+  }
+}
+@media (max-width: 441px) {
+  .toppage header {
+    padding-right: 1px;
+  }
+  .toppage .title h1 {
+    font-size: 3.5rem;
+  }
+  .toppage .copyright {
+    left: -16%;
+  }
+  .toppage .sns {
+    right: 1.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */

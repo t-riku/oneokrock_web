@@ -36,7 +36,15 @@ li {
   //   display: flex;
   //   align-items: center;
   //   justify-content: center;
+  position: absolute;
+  right: 0;
   @include middle();
+  transition: all 0.3s ease;
+
+  &.active {
+    position: absolute;
+    right: 300px;
+  }
 
   header {
     // toggleとiconのflexを解除して上に持っていきたいため
@@ -45,6 +53,27 @@ li {
     left: 0;
     width: 100%;
     z-index: 1000;
+    padding-right: 35px;
+
+    .up-btn,
+    .mute-btn {
+      font-size: 3rem;
+      cursor: pointer;
+    }
+
+    .up-btn {
+      display: none;
+      &.muted {
+        display: block;
+      }
+    }
+
+    .mute-btn {
+      display: block;
+      &.muted {
+        display: none;
+      }
+    }
 
     .toggle {
       background: url(/images/menu.png);
@@ -54,6 +83,17 @@ li {
       background-size: 30px;
       background-position: center;
       cursor: pointer;
+
+      &.active {
+        // activeがつくと画像を変える
+        background: url(/images/close.png);
+        width: 60px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+        cursor: pointer;
+      }
     }
   }
 
@@ -85,6 +125,74 @@ li {
       text-shadow: #000 1px 3px 6px;
       letter-spacing: -0.3rem;
     }
+
+    // 動くWebデザイン帳
+    /*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+
+    /*スクロールダウン全体の場所*/
+    .scrolldown4 {
+      /*描画位置※位置は適宜調整してください*/
+      position: absolute;
+      bottom: 1%;
+      right: 50%;
+      /*矢印の動き1.5秒かけて永遠にループ*/
+      animation: arrowmove 1.5s ease-in-out infinite;
+    }
+
+    /*下からの距離が変化して全体が下→上→下に動く*/
+    @keyframes arrowmove {
+      0% {
+        bottom: 1%;
+      }
+      50% {
+        bottom: 2%;
+      }
+      100% {
+        bottom: 1%;
+      }
+    }
+
+    /*Scrollテキストの描写*/
+    .scrolldown4 span {
+      /*描画位置*/
+      position: absolute;
+      left: -20px;
+      bottom: 10px;
+      /*テキストの形状*/
+      color: #eee;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      /*縦書き設定*/
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+    }
+
+    /* 矢印の描写 */
+    .scrolldown4:before {
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      bottom: 0;
+      right: -3px;
+      /*矢印の形状*/
+      width: 1px;
+      height: 18px;
+      background: #eee;
+      transform: skewX(-20deg);
+    }
+
+    .scrolldown4:after {
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      /*矢印の形状*/
+      width: 1px;
+      height: 45px;
+      background: #eee;
+    }
   }
 
   .copyright {
@@ -113,16 +221,143 @@ li {
       li {
         padding-bottom: 1rem;
 
-        i {
-          font-size: 2rem;
+        a {
+          display: inline-block;
+          transition: all 0.25s ease;
+          &:hover {
+            transform: translateY(-4px);
+          }
+          i {
+            font-size: 2rem;
+            &:hover {
+              color: #ec330e;
+            }
+          }
         }
       }
     }
   }
-  .menu {
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  z-index: -1;
+  @include middle();
+
+  // 動くWebデザイン帳
+  // 左から右に線が伸びる
+  .gnavi li a {
+    /*線の基点とするためrelativeを指定*/
+    position: relative;
+  }
+
+  .gnavi li a::after {
+    content: "";
+    /*絶対配置で線の位置を決める*/
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    bottom: 0;
+    left: 5%;
+    /*線の形状*/
+    width: 90%;
+    height: 2px;
+    background: #ec330e;
+    /*アニメーションの指定*/
+    transition: all 0.3s;
+    transform: scale(0, 1); /*X方向0、Y方向1*/
+    transform-origin: left top; /*左上基点*/
+  }
+
+  /*現在地とhoverの設定*/
+  .gnavi li.current a::after,
+  .gnavi li a:hover::after {
+    transform: scale(1, 1); /*X方向にスケール拡大*/
+  }
+
+  ul {
+    font-size: 24px;
+    li {
+      margin-bottom: 1rem;
+      a {
+        color: #111;
+        transition: all 0.3s ease;
+        &:hover {
+          color: #ec330e;
+        }
+      }
+    }
+  }
+}
+
+// @media query
+@media (max-width: 992px) {
+  // toppage section
+  .toppage {
+    .title {
+      h1 {
+        font-size: 7rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  // toppage section
+  .toppage {
+    .title {
+      h1 {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  // toppage section
+  .toppage {
+    header {
+      padding-right: 4px;
+    }
+
+    .title {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .copyright {
+      left: -11%;
+    }
+
+    .sns {
+      right: 2rem;
+    }
+  }
+}
+
+// スマホ版
+@media (max-width: 441px) {
+  // toppage section
+  .toppage {
+    header {
+      padding-right: 1px;
+    }
+
+    .title {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    .copyright {
+      left: -16%;
+    }
+
+    .sns {
+      right: 1.5rem;
+    }
   }
 }
