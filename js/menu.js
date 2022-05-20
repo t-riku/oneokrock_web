@@ -25,16 +25,16 @@ menuToggle.addEventListener("click", function () {
   topPage.classList.toggle("active");
 });
 
-topPage.addEventListener("click", function () {
-  // if (menuToggle.hasClass("active")) {
-  //   menuToggle.removeClass("active");
-  //   topPage.removeClass("active");
-  // }
-  if (menuToggle.hasClass("active")) {
-    menuToggle.classList.toggle("active");
-    topPage.classList.toggle("active");
-  }
-});
+// topPage.addEventListener("click", function () {
+//   // if (menuToggle.hasClass("active")) {
+//   //   menuToggle.removeClass("active");
+//   //   topPage.removeClass("active");
+//   // }
+//   if (menuToggle.hasClass("active")) {
+//     menuToggle.classList.toggle("active");
+//     topPage.classList.toggle("active");
+//   }
+// });
 
 // topPage.addEventListener("click", (e) => {
 //   if (!e.target.closest(".toggle")) {

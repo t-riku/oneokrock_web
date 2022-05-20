@@ -19,16 +19,19 @@
   </head>
   <body>
     <!-- toppage section -->
+    <!-- 解決していないこと：toggleのmenuのhoverが効かない。
+                          toggleの領域外をクリックした時にmenuが閉じてくれない(menu.jsの修正) -->
     <section class="toppage vh-100 w-100">
-      <header
-        class="d-flex align-items-center justify-content-end py-5"
-        id="header"
-      >
-        <i class="bi bi-volume-up up-btn"></i>
-        <i class="bi bi-volume-mute mute-btn"></i>
-        <div class="toggle"></div>
-      </header>
-      <!-- <video
+      <div class="toppage-box">
+        <header
+          class="d-flex align-items-center justify-content-end py-5"
+          id="header"
+        >
+          <i class="bi bi-volume-up up-btn"></i>
+          <i class="bi bi-volume-mute mute-btn"></i>
+          <div class="toggle"></div>
+        </header>
+        <!-- <video
         src="/images/完全感覚Dreamer LIVE MIX_480p.mp4"
         webkit-playsinline
         playsinline
@@ -37,58 +40,59 @@
         loop
         class="videoVolume"
       ></video> -->
-      <video
-        src="/images/完全感覚Dreamer LIVE MIX_480p.mp4"
-        muted
-        class="videoVolume"
-      ></video>
-      <div class="overlay"></div>
-      <div class="title">
-        <h1 class="text-white">ONE OK ROCK</h1>
-        <div class="scrolldown4"><span>Scroll</span></div>
-      </div>
-      <p class="copyright text-white">
-        <small>©ONE OK ROCK All rights reserved.</small>
-      </p>
-      <div class="sns">
-        <ul>
-          <li>
-            <a href="https://twitter.com/ONEOKROCK_japan"
-              ><i class="bi bi-twitter"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/ONEOKROCK"
-              ><i class="bi bi-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
-              ><i class="bi bi-tiktok" art="tiktok"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/oneokrockofficial/"
-              ><i class="bi bi-instagram"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/ONEOKROCKchannel"
-              ><i class="bi bi-youtube" art="youtube"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://music.apple.com/jp/artist/one-ok-rock/252239625?app=itunes"
-              ><i class="bi bi-music-note-beamed" art="apple music"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
-              ><i class="bi bi-spotify" art="spotify"></i
-            ></a>
-          </li>
-        </ul>
+        <video
+          src="/images/完全感覚Dreamer LIVE MIX_480p.mp4"
+          muted
+          class="videoVolume"
+        ></video>
+        <div class="overlay"></div>
+        <div class="title">
+          <h1 class="text-white">ONE OK ROCK</h1>
+          <div class="scrolldown4"><span>Scroll</span></div>
+        </div>
+        <p class="copyright text-white">
+          <small>©ONE OK ROCK All rights reserved.</small>
+        </p>
+        <div class="sns">
+          <ul>
+            <li>
+              <a href="https://twitter.com/ONEOKROCK_japan"
+                ><i class="bi bi-twitter"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/ONEOKROCK"
+                ><i class="bi bi-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
+                ><i class="bi bi-tiktok" art="tiktok"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/oneokrockofficial/"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/user/ONEOKROCKchannel"
+                ><i class="bi bi-youtube" art="youtube"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://music.apple.com/jp/artist/one-ok-rock/252239625?app=itunes"
+                ><i class="bi bi-music-note-beamed" art="apple music"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
+                ><i class="bi bi-spotify" art="spotify"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <div class="menu">
@@ -100,6 +104,31 @@
         <li><a href="#">CONTACT</a></li>
       </ul>
     </div>
+
+    <!-- biography section -->
+    <section id="biography" class="biography">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 mx-auto text-center">
+            <h2 class="my-5">BIO</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 mx-auto">
+            <p>
+              2005年にバンド結成。エモ、ロックを軸にしたサウンドとアグレッシブな
+              ライブパフォーマンスが若い世代に支持されてきた。<br />
+              2007年にデビューして以来、全国ライブハウスツアーや各地での夏フェスを中心に積極的にライブを行い、これまでに、武道館、野外スタジアム公演、大規模な全国アリーナツアーなどを成功させる。2016年には11万人規模を動員する野外ライブを、2018年は東京ドーム2日間を含む全国ドームツアを開催。<br />
+              日本のみならず海外レーベルとの契約をし、アルバム発売を経てアメリカ、ヨーロッパ、アジアでのワールドツアーを成功させるなど、世界基準のバンドになってきており、2019年にはエド・シーランのアジアツアーのオープニングアクトにも抜擢された。また、2020年10月には自身初の試みとなるオンラインライブを無観客のZOZOマリンスタジアムから世界同時生配信し、成功を収めた。<br />
+              2021年7月には有観客で初のアコースティックライブを開催し、今までとは違った新たな一面を見せた。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- team section -->
+
     <script src="/js/menu.js"></script>
   </body>
 </html>

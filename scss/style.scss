@@ -30,212 +30,162 @@ li {
   list-style: none;
 }
 
+h2,
+h3 {
+  font-weight: 540;
+}
+
+section + section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
 // toppage section
 .toppage {
-  background-color: #ccc;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  position: absolute;
-  right: 0;
-  @include middle();
-  transition: all 0.3s ease;
-
-  &.active {
+  position: relative;
+  .toppage-box {
+    background-color: #ccc;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
     position: absolute;
-    right: 300px;
-
-    &::after {
-      @include overlay(rgba($color: #000000, $alpha: 0.8));
-      z-index: 20;
-    }
-  }
-
-  header {
-    // toggleとiconのflexを解除して上に持っていきたいため
-    position: absolute;
-    top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
-    z-index: 1000;
-    padding-right: 35px;
+    height: 100%;
+    transition: all 0.3s ease;
 
-    .up-btn,
-    .mute-btn {
-      font-size: 3rem;
-      cursor: pointer;
-    }
+    &.active {
+      position: absolute;
+      right: 300px;
 
-    .up-btn {
-      display: none;
-      &.muted {
-        display: block;
+      &::after {
+        @include overlay(rgba($color: #000000, $alpha: 0.8));
+        z-index: 20;
       }
     }
 
-    .mute-btn {
-      display: block;
-      &.muted {
+    header {
+      // toggleとiconのflexを解除して上に持っていきたいため
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding-right: 35px;
+
+      .up-btn,
+      .mute-btn {
+        font-size: 3rem;
+        cursor: pointer;
+      }
+
+      .up-btn {
         display: none;
+        &.muted {
+          display: block;
+        }
       }
-    }
 
-    .toggle {
-      background: url(/images/menu.png);
-      width: 60px;
-      height: 60px;
-      background-repeat: no-repeat;
-      background-size: 30px;
-      background-position: center;
-      cursor: pointer;
+      .mute-btn {
+        display: block;
+        &.muted {
+          display: none;
+        }
+      }
 
-      &.active {
-        // activeがつくと画像を変える
-        background: url(/images/close.png);
+      .toggle {
+        background: url(/images/menu.png);
         width: 60px;
         height: 60px;
         background-repeat: no-repeat;
         background-size: 30px;
         background-position: center;
         cursor: pointer;
-      }
-    }
-  }
 
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1d1e02;
-    mix-blend-mode: overlay;
-  }
-
-  .title {
-    z-index: 10;
-    h1 {
-      font-size: 8rem;
-      font-weight: 1000;
-      text-shadow: #000 1px 3px 6px;
-      letter-spacing: -0.3rem;
-    }
-
-    // 動くWebデザイン帳
-    /*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
-
-    /*スクロールダウン全体の場所*/
-    .scrolldown4 {
-      /*描画位置※位置は適宜調整してください*/
-      position: absolute;
-      bottom: 1%;
-      right: 50%;
-      /*矢印の動き1.5秒かけて永遠にループ*/
-      animation: arrowmove 1.5s ease-in-out infinite;
-    }
-
-    /*下からの距離が変化して全体が下→上→下に動く*/
-    @keyframes arrowmove {
-      0% {
-        bottom: 1%;
-      }
-      50% {
-        bottom: 2%;
-      }
-      100% {
-        bottom: 1%;
+        &.active {
+          // activeがつくと画像を変える
+          background: url(/images/close.png);
+          width: 60px;
+          height: 60px;
+          background-repeat: no-repeat;
+          background-size: 30px;
+          background-position: center;
+          cursor: pointer;
+        }
       }
     }
 
-    /*Scrollテキストの描写*/
-    .scrolldown4 span {
-      /*描画位置*/
+    video {
       position: absolute;
-      left: -20px;
-      bottom: 10px;
-      /*テキストの形状*/
-      color: #eee;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      /*縦書き設定*/
-      -ms-writing-mode: tb-rl;
-      -webkit-writing-mode: vertical-rl;
-      writing-mode: vertical-rl;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
     }
 
-    /* 矢印の描写 */
-    .scrolldown4:before {
-      content: "";
-      /*描画位置*/
+    .overlay {
       position: absolute;
-      bottom: 0;
-      right: -3px;
-      /*矢印の形状*/
-      width: 1px;
-      height: 18px;
-      background: #eee;
-      transform: skewX(-20deg);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #1d1e02;
+      mix-blend-mode: overlay;
     }
 
-    .scrolldown4:after {
-      content: "";
-      /*描画位置*/
+    .title {
+      z-index: 10;
       position: absolute;
-      bottom: 0;
-      right: 0;
-      /*矢印の形状*/
-      width: 1px;
-      height: 45px;
-      background: #eee;
+      top: 50%;
+      left: 30%;
+      transform: translateY(-50%);
+      h1 {
+        font-size: 8rem;
+        font-weight: 1000;
+        text-shadow: #000 1px 3px 6px;
+        letter-spacing: -0.3rem;
+      }
     }
-  }
 
-  .copyright {
-    position: absolute;
-    top: 50%;
-    left: -3%;
-    transform: translateY(-50%);
-    transform: rotate(90deg);
-    transform-origin: center;
-    p {
-      font-size: 0.5rem;
-      font-weight: 200;
+    .copyright {
+      position: absolute;
+      top: 50%;
+      left: -3%;
+      transform: translateY(-50%);
+      transform: rotate(90deg);
+      transform-origin: center;
+      p {
+        font-size: 0.5rem;
+        font-weight: 200;
+      }
     }
-  }
 
-  .sns {
-    position: absolute;
-    top: 50%;
-    right: 5rem;
-    transform: translateY(-50%);
+    .sns {
+      position: absolute;
+      top: 50%;
+      right: 5rem;
+      transform: translateY(-50%);
 
-    ul {
-      display: block;
-      flex-direction: column !important;
+      ul {
+        display: block;
+        flex-direction: column !important;
 
-      li {
-        padding-bottom: 1rem;
+        li {
+          padding-bottom: 1rem;
 
-        a {
-          display: inline-block;
-          transition: all 0.25s ease;
-          &:hover {
-            transform: translateY(-4px);
-          }
-          i {
-            font-size: 2rem;
+          a {
+            display: inline-block;
+            transition: all 0.25s ease;
             &:hover {
-              color: #ec330e;
+              transform: translateY(-4px);
+            }
+            i {
+              font-size: 2rem;
+              &:hover {
+                color: #ec330e;
+              }
             }
           }
         }
@@ -243,7 +193,6 @@ li {
     }
   }
 }
-
 .menu {
   position: absolute;
   top: 0;
@@ -290,6 +239,7 @@ li {
       a {
         color: #111;
         transition: all 0.3s ease;
+
         &:hover {
           color: #ec330e;
         }
@@ -298,13 +248,51 @@ li {
   }
 }
 
+// biography section
+.biography {
+  width: 100%;
+  background: rgb(24, 1, 4);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 1, 4, 1) 0%,
+    rgba(85, 19, 3, 1) 52%,
+    rgba(233, 59, 5, 1) 100%
+  );
+  color: #fff;
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}
+
 // @media query
+@media (max-width: 1199px) {
+  .toppage {
+    .toppage-box {
+      .title {
+        left: 22%;
+        h1 {
+          font-size: 9.5rem;
+          letter-spacing: -0.4rem;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 992px) {
   // toppage section
   .toppage {
-    .title {
-      h1 {
-        font-size: 7rem;
+    .toppage-box {
+      .title {
+        left: 21%;
+        h1 {
+          font-size: 7.5rem;
+        }
       }
     }
   }
@@ -313,9 +301,12 @@ li {
 @media (max-width: 768px) {
   // toppage section
   .toppage {
-    .title {
-      h1 {
-        font-size: 5rem;
+    .toppage-box {
+      .title {
+        left: 23%;
+        h1 {
+          font-size: 5rem;
+        }
       }
     }
   }
@@ -324,54 +315,56 @@ li {
 @media (max-width: 576px) {
   // toppage section
   .toppage {
-    header {
-      padding-right: 4px;
-      .toggle {
-        z-index: 100;
+    .toppage-box {
+      header {
+        padding-right: 4px;
+        .toggle {
+          z-index: 100;
+        }
       }
-    }
 
-    .title {
-      h1 {
-        font-size: 4rem;
+      .title {
+        left: 25%;
+        h1 {
+          font-size: 4rem;
+          letter-spacing: -0.2rem;
+        }
       }
-    }
 
-    .copyright {
-      left: -11%;
-    }
+      .copyright {
+        left: -11%;
+      }
 
-    .sns {
-      right: 2rem;
+      .sns {
+        right: 2rem;
+      }
     }
   }
-  // .menu {
-  //   width: 100%;
-  //   z-index: 10;
-  //   background-color: #fff;
-  // }
 }
 
 // スマホ版
 @media (max-width: 441px) {
   // toppage section
   .toppage {
-    header {
-      padding-right: 1px;
-    }
-
-    .title {
-      h1 {
-        font-size: 3.5rem;
+    .toppage-box {
+      header {
+        padding-right: 1px;
       }
-    }
 
-    .copyright {
-      left: -16%;
-    }
+      .title {
+        left: 27%;
+        h1 {
+          font-size: 3rem;
+        }
+      }
 
-    .sns {
-      right: 1.5rem;
+      .copyright {
+        left: -16%;
+      }
+
+      .sns {
+        right: 1.5rem;
+      }
     }
   }
 }
