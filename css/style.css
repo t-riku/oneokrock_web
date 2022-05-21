@@ -450,6 +450,24 @@ section + section {
   flex: none;
 }
 
+@media (max-width: 1400px) {
+  .news .news-item {
+    height: 65rem;
+  }
+  .news .news-item img {
+    height: 30rem;
+  }
+  .news .news-item h5 {
+    font-size: 2rem;
+  }
+  .news .news-item p {
+    font-size: 1.5rem;
+  }
+  .news .news-item a {
+    font-size: 1.2rem;
+    left: 3.5rem;
+  }
+}
 @media (max-width: 1199px) {
   .toppage .toppage-box .title {
     left: 22%;
@@ -473,6 +491,23 @@ section + section {
     font-size: 1.7rem;
     line-height: 2.5rem;
   }
+
+  .news .news-item {
+    height: 63rem;
+  }
+  .news .news-item img {
+    height: 25rem;
+  }
+  .news .news-item h5 {
+    font-size: 2.1rem;
+  }
+  .news .news-item p {
+    font-size: 1.4rem;
+  }
+  .news .news-item a {
+    font-size: 1.2rem;
+    left: 3rem;
+  }
 }
 @media (max-width: 992px) {
   .toppage .toppage-box .title {
@@ -492,6 +527,23 @@ section + section {
   .biography p {
     font-size: 1.7rem;
     line-height: 2.5rem;
+  }
+
+  .news .news-item {
+    height: 70rem;
+  }
+  .news .news-item img {
+    height: 30rem;
+  }
+  .news .news-item h5 {
+    font-size: 2.2rem;
+  }
+  .news .news-item p {
+    font-size: 1.6rem;
+  }
+  .news .news-item a {
+    font-size: 1.4rem;
+    left: 4rem;
   }
 }
 @media (max-width: 768px) {
@@ -515,6 +567,24 @@ section + section {
   .biography p {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .news .news-item {
+    height: 55rem;
+  }
+  .news .news-item img {
+    height: 20rem;
+  }
+  .news .news-item h5 {
+    font-size: 1.7rem;
+  }
+  .news .news-item p {
+    font-size: 1.3rem;
+  }
+  .news .news-item a {
+    font-size: 1.2rem;
+    left: 3rem;
+    padding: 0.8rem 0 !important;
   }
 }
 @media (max-width: 576px) {
@@ -556,6 +626,23 @@ section + section {
     font-size: 1.3rem;
     line-height: 2rem;
   }
+
+  .news .news-item {
+    height: 67rem;
+  }
+  .news .news-item img {
+    height: 35rem;
+  }
+  .news .news-item h5 {
+    font-size: 2rem;
+  }
+  .news .news-item p {
+    font-size: 1.6rem;
+  }
+  .news .news-item a {
+    font-size: 1.5rem;
+    left: 5rem;
+  }
 }
 @media (max-width: 441px) {
   .toppage .toppage-box header {
@@ -588,5 +675,22 @@ section + section {
   .biography p {
     font-size: 1.3rem;
     line-height: 2rem;
+  }
+
+  .news .news-item {
+    height: 60rem;
+  }
+  .news .news-item img {
+    height: 30rem;
+  }
+  .news .news-item h5 {
+    font-size: 1.8rem;
+  }
+  .news .news-item p {
+    font-size: 1.2rem;
+  }
+  .news .news-item a {
+    font-size: 1.3rem;
+    left: 3rem;
   }
 }/*# sourceMappingURL=style.css.map */

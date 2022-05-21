@@ -531,7 +531,31 @@ section + section {
 }
 
 // @media query
+@media (max-width: 1400px) {
+  // news section
+  .news {
+    .news-item {
+      height: 65rem;
+      img {
+        height: 30rem;
+      }
+      h5 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+
+      a {
+        font-size: 1.2rem;
+        left: 3.5rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 1199px) {
+  // toppage section
   .toppage {
     .toppage-box {
       .title {
@@ -562,6 +586,28 @@ section + section {
       line-height: 2.5rem;
     }
   }
+
+  // news section
+  .news {
+    .news-item {
+      height: 63rem;
+
+      img {
+        height: 25rem;
+      }
+      h5 {
+        font-size: 2.1rem;
+      }
+      p {
+        font-size: 1.4rem;
+      }
+
+      a {
+        font-size: 1.2rem;
+        left: 3rem;
+      }
+    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -589,6 +635,28 @@ section + section {
     p {
       font-size: 1.7rem;
       line-height: 2.5rem;
+    }
+  }
+
+  // news section
+  .news {
+    .news-item {
+      height: 70rem;
+
+      img {
+        height: 30rem;
+      }
+      h5 {
+        font-size: 2.2rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+
+      a {
+        font-size: 1.4rem;
+        left: 4rem;
+      }
     }
   }
 }
@@ -626,8 +694,28 @@ section + section {
   }
 
   // news section
-  // .news {
-  // }
+  .news {
+    .news-item {
+      height: 55rem;
+
+      img {
+        height: 20rem;
+      }
+
+      h5 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+
+      a {
+        font-size: 1.2rem;
+        left: 3rem;
+        padding: 0.8rem 0 !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 576px) {
@@ -682,6 +770,28 @@ section + section {
       line-height: 2rem;
     }
   }
+
+  // news section
+  .news {
+    .news-item {
+      height: 67rem;
+
+      img {
+        height: 35rem;
+      }
+      h5 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+
+      a {
+        font-size: 1.5rem;
+        left: 5rem;
+      }
+    }
+  }
 }
 
 // スマホ版
@@ -727,6 +837,28 @@ section + section {
     p {
       font-size: 1.3rem;
       line-height: 2rem;
+    }
+  }
+
+  // news section
+  .news {
+    .news-item {
+      height: 60rem;
+
+      img {
+        height: 30rem;
+      }
+      h5 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+
+      a {
+        font-size: 1.3rem;
+        left: 3rem;
+      }
     }
   }
 }
