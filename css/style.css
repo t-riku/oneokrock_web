@@ -47,7 +47,7 @@ h6 {
 
 section + section {
   padding-top: 60px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
 
 .card-effect {
@@ -149,19 +149,80 @@ section + section {
   background-color: #1d1e02;
   mix-blend-mode: overlay;
 }
-.toppage .toppage-box .title {
+.toppage .toppage-box .scrolldown4 {
+  /*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+  /*スクロールダウン全体の場所*/
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  bottom: 2%;
+  right: 50%;
+  /*矢印の動き1.5秒かけて永遠にループ*/
+  animation: arrowmove 1.5s ease-in-out infinite;
+  /* 矢印の描写 */
+  /*Scrollテキストの描写*/
+  /*下からの距離が変化して全体が下→上→下に動く*/
+}
+.toppage .toppage-box .scrolldown4:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: -3px;
+  /*矢印の形状*/
+  width: 1px;
+  height: 20px;
+  background: #eee;
+  transform: skewX(-15deg);
+}
+.toppage .toppage-box .scrolldown4:after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*矢印の形状*/
+  width: 1px;
+  height: 50px;
+  background: #eee;
+}
+.toppage .toppage-box .scrolldown4 span {
+  /*描画位置*/
+  position: absolute;
+  left: -20px;
+  bottom: 10px;
+  /*テキストの形状*/
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+@keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+  50% {
+    bottom: 2%;
+  }
+  100% {
+    bottom: 1%;
+  }
+}
+.toppage .title {
   position: absolute;
   top: 50%;
   left: 30%;
   transform: translateY(-50%);
 }
-.toppage .toppage-box .title h1 {
+.toppage .title h1 {
   font-size: 8rem;
   font-weight: 1000;
   text-shadow: #000 1px 3px 6px;
   letter-spacing: -0.3rem;
 }
-.toppage .toppage-box .copyright {
+.toppage .copyright {
   position: absolute;
   top: 50%;
   left: -3%;
@@ -169,34 +230,34 @@ section + section {
   transform: rotate(90deg);
   transform-origin: center;
 }
-.toppage .toppage-box .copyright p {
+.toppage .copyright p {
   font-size: 0.5rem;
   font-weight: 200;
 }
-.toppage .toppage-box .sns {
+.toppage .sns {
   position: absolute;
   top: 50%;
   right: 5rem;
   transform: translateY(-50%);
 }
-.toppage .toppage-box .sns ul {
+.toppage .sns ul {
   display: block;
   flex-direction: column !important;
 }
-.toppage .toppage-box .sns ul li {
+.toppage .sns ul li {
   padding-bottom: 1rem;
 }
-.toppage .toppage-box .sns ul li a {
+.toppage .sns ul li a {
   display: inline-block;
   transition: all 0.25s ease;
 }
-.toppage .toppage-box .sns ul li a:hover {
+.toppage .sns ul li a:hover {
   transform: translateY(-4px);
 }
-.toppage .toppage-box .sns ul li a i {
+.toppage .sns ul li a i {
   font-size: 2rem;
 }
-.toppage .toppage-box .sns ul li a i:hover {
+.toppage .sns ul li a i:hover {
   color: #ec330e;
 }
 
@@ -269,7 +330,7 @@ section + section {
 }
 .biography .layer {
   transform: translateY(3rem);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   height: 55rem;
 }
 .biography h2 {
@@ -284,8 +345,8 @@ section + section {
   background: rgb(24, 1, 4);
   background: linear-gradient(90deg, rgb(24, 1, 4) 0%, rgb(85, 19, 3) 52%, rgb(233, 59, 5) 100%);
 }
-.team .team-sentence h2,
-.team .team-sentence p {
+.team .heading h2,
+.team .heading p {
   color: #fff;
 }
 .team .team-member img {
@@ -300,8 +361,8 @@ section + section {
   justify-content: center;
 }
 .team .team-member .insta-icon a {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   background-color: #0d6efd;
   border: 1.3px solid #0d6efd;
   color: #fff;
@@ -316,14 +377,77 @@ section + section {
   color: #0d6efd;
   background-color: transparent;
 }
+.team .team-member .insta-icon a:hover i {
+  color: #0d6efd;
+}
 
 .news {
   background: rgb(24, 1, 4);
   background: linear-gradient(90deg, rgb(24, 1, 4) 0%, rgb(85, 19, 3) 52%, rgb(233, 59, 5) 100%);
 }
-.news .team-sentence h2,
-.news .team-sentence p {
+.news .heading h2,
+.news .heading p {
   color: #fff;
+}
+.news .news-item {
+  position: relative;
+  overflow: hidden;
+  height: 66rem;
+}
+.news .news-item img {
+  width: 100%;
+  height: 37.2rem;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.news .news-item h5 {
+  font-size: 2rem;
+}
+.news .news-item p {
+  font-size: 1.3rem;
+}
+.news .news-item a {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 4rem;
+  width: 80%;
+}
+.news .news-item:hover .icon-box {
+  background-color: #fff;
+}
+.news .news-item:hover .icon-box i {
+  color: #0d6efd;
+}
+.news .news-item::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: rgb(251, 248, 198);
+  background: linear-gradient(90deg, rgba(251, 248, 198, 0.4) 0%, rgba(164, 233, 147, 0.4) 37%, rgba(186, 195, 122, 0.4) 68%, rgba(242, 156, 130, 0.4) 100%);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+.news .news-item:hover::after {
+  opacity: 1;
+  top: 0;
+}
+.news .news-item .icon-box {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  background-color: #0d6efd;
+  border-radius: 100px;
+  flex: none;
 }
 
 @media (max-width: 1199px) {

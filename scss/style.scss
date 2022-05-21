@@ -44,14 +44,14 @@ h2 {
 }
 
 h6 {
-  color: #ec330e;
+  color: $h6TextColor;
   font-weight: 420;
   font-size: 2rem;
 }
 
 section + section {
   padding-top: 60px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
 }
 
 .card-effect {
@@ -163,57 +163,122 @@ section + section {
       mix-blend-mode: overlay;
     }
 
-    .title {
-      // z-index: 10;
+    .scrolldown4 {
+      /*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+      /*スクロールダウン全体の場所*/
+
+      /*描画位置※位置は適宜調整してください*/
       position: absolute;
-      top: 50%;
-      left: 30%;
-      transform: translateY(-50%);
-      h1 {
-        font-size: 8rem;
-        font-weight: 1000;
-        text-shadow: #000 1px 3px 6px;
-        letter-spacing: -0.3rem;
+      bottom: 2%;
+      right: 50%;
+      /*矢印の動き1.5秒かけて永遠にループ*/
+      animation: arrowmove 1.5s ease-in-out infinite;
+
+      /* 矢印の描写 */
+      &:before {
+        content: "";
+        /*描画位置*/
+        position: absolute;
+        bottom: 0;
+        right: -3px;
+        /*矢印の形状*/
+        width: 1px;
+        height: 20px;
+        background: #eee;
+        transform: skewX(-15deg);
+      }
+      &:after {
+        content: "";
+        /*描画位置*/
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        /*矢印の形状*/
+        width: 1px;
+        height: 50px;
+        background: #eee;
+      }
+
+      /*Scrollテキストの描写*/
+      span {
+        /*描画位置*/
+        position: absolute;
+        left: -20px;
+        bottom: 10px;
+        /*テキストの形状*/
+        color: #eee;
+        font-size: 0.7rem;
+        letter-spacing: 0.05em;
+        /*縦書き設定*/
+        -ms-writing-mode: tb-rl;
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+      }
+      /*下からの距離が変化して全体が下→上→下に動く*/
+      @keyframes arrowmove {
+        0% {
+          bottom: 1%;
+        }
+        50% {
+          bottom: 2%;
+        }
+        100% {
+          bottom: 1%;
+        }
       }
     }
+  }
 
-    .copyright {
-      position: absolute;
-      top: 50%;
-      left: -3%;
-      transform: translateY(-50%);
-      transform: rotate(90deg);
-      transform-origin: center;
-      p {
-        font-size: 0.5rem;
-        font-weight: 200;
-      }
+  .title {
+    // z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+    h1 {
+      font-size: 8rem;
+      font-weight: 1000;
+      text-shadow: #000 1px 3px 6px;
+      letter-spacing: -0.3rem;
     }
+  }
 
-    .sns {
-      position: absolute;
-      top: 50%;
-      right: 5rem;
-      transform: translateY(-50%);
+  .copyright {
+    position: absolute;
+    top: 50%;
+    left: -3%;
+    transform: translateY(-50%);
+    transform: rotate(90deg);
+    transform-origin: center;
+    p {
+      font-size: 0.5rem;
+      font-weight: 200;
+    }
+  }
 
-      ul {
-        display: block;
-        flex-direction: column !important;
+  .sns {
+    position: absolute;
+    top: 50%;
+    right: 5rem;
+    transform: translateY(-50%);
 
-        li {
-          padding-bottom: 1rem;
+    ul {
+      display: block;
+      flex-direction: column !important;
 
-          a {
-            display: inline-block;
-            transition: all 0.25s ease;
+      li {
+        padding-bottom: 1rem;
+
+        a {
+          display: inline-block;
+          transition: all 0.25s ease;
+          &:hover {
+            transform: translateY(-4px);
+          }
+          i {
+            font-size: 2rem;
             &:hover {
-              transform: translateY(-4px);
-            }
-            i {
-              font-size: 2rem;
-              &:hover {
-                color: #ec330e;
-              }
+              color: #ec330e;
             }
           }
         }
@@ -295,7 +360,7 @@ section + section {
 
   .layer {
     transform: translateY(3rem);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     height: 55rem;
   }
 
@@ -319,7 +384,7 @@ section + section {
     rgba(233, 59, 5, 1) 100%
   );
 
-  .team-sentence {
+  .heading {
     h2,
     p {
       color: #fff;
@@ -340,8 +405,8 @@ section + section {
       justify-content: center;
 
       a {
-        width: 34px;
-        height: 34px;
+        width: 36px;
+        height: 36px;
         background-color: $primary;
         border: 1.3px solid $primary;
         color: #fff;
@@ -355,6 +420,10 @@ section + section {
         &:hover {
           color: $primary;
           background-color: transparent;
+
+          i {
+            color: $primary;
+          }
         }
       }
     }
@@ -371,10 +440,92 @@ section + section {
     rgba(233, 59, 5, 1) 100%
   );
 
-  .team-sentence {
+  .heading {
     h2,
     p {
       color: #fff;
+    }
+  }
+
+  .news-item {
+    position: relative;
+    overflow: hidden;
+    height: 66rem;
+
+    img {
+      width: 100%;
+      height: 37.2rem;
+      margin: 0;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h5 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+
+    a {
+      font-size: 1.2rem;
+      position: absolute;
+      bottom: 1.5rem;
+      left: 4rem;
+      width: 80%;
+    }
+
+    &:hover {
+      // p,
+      // h5 {
+      //   color: #000;
+      // }
+
+      .icon-box {
+        background-color: #fff;
+
+        i {
+          color: $primary;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: rgb(251, 248, 198);
+      background: linear-gradient(
+        90deg,
+        rgba(251, 248, 198, 0.4) 0%,
+        rgba(164, 233, 147, 0.4) 37%,
+        rgba(186, 195, 122, 0.4) 68%,
+        rgba(242, 156, 130, 0.4) 100%
+      );
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      top: 0;
+    }
+
+    .icon-box {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      background-color: $primary;
+      border-radius: 100px;
+      flex: none;
     }
   }
 }
@@ -473,6 +624,10 @@ section + section {
       line-height: 2rem;
     }
   }
+
+  // news section
+  // .news {
+  // }
 }
 
 @media (max-width: 576px) {
