@@ -465,6 +465,7 @@ section + section {
 
 .music {
   padding: 0;
+  height: 100%;
 }
 .music .music_wr {
   position: relative;
@@ -472,6 +473,7 @@ section + section {
 .music .music_wr video {
   width: 100%;
   height: 100%;
+  display: block;
 }
 .music .music_wr::after {
   content: "";
@@ -534,6 +536,7 @@ section + section {
 .music .music_wr .music-ttl .disc .disc-item .overlay h4 {
   font-weight: 700;
   font-size: 1.4rem;
+  text-align: center;
 }
 .music .music_wr .music-ttl .disc .disc-item .overlay p {
   text-align: center;
