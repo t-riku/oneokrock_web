@@ -530,6 +530,32 @@ section + section {
   }
 }
 
+/* contact section */
+.contact {
+  p {
+    font-size: 1.5rem;
+  }
+  form {
+    input.form-control {
+      height: 56px;
+    }
+    .form-control {
+      border: transparent;
+      border-radius: 0;
+      background-color: rgba(0, 0, 0, 0.04);
+      font-size: 1.5rem;
+    }
+    .btn-sub {
+      .btn {
+        padding: 14px 18px;
+        border-width: 2px;
+        border-radius: 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
 // @media query
 @media (max-width: 1400px) {
   // news section

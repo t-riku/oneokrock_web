@@ -450,6 +450,26 @@ section + section {
   flex: none;
 }
 
+/* contact section */
+.contact p {
+  font-size: 1.5rem;
+}
+.contact form input.form-control {
+  height: 56px;
+}
+.contact form .form-control {
+  border: transparent;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.04);
+  font-size: 1.5rem;
+}
+.contact form .btn-sub .btn {
+  padding: 14px 18px;
+  border-width: 2px;
+  border-radius: 0;
+  font-size: 1.5rem;
+}
+
 @media (max-width: 1400px) {
   .news .news-item {
     height: 65rem;
