@@ -532,22 +532,55 @@ section + section {
 
 // rest space
 .rest {
+  position: relative;
   // background-image: url(/images/oneokrock01.jpg);
-  // background-size: cover;
-  // background-position: center;
-  // background-attachment: fixed;
-  // background-repeat: no-repeat;
+  background-image: url(/images/oneokrock03.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 25rem;
-  // overflow: hidden;
-  transform: skewY(-10deg);
-  z-index: 10000;
+  height: 22rem;
+  z-index: 0;
+  overflow: hidden;
 
-  .rest-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: skewY(10deg);
+  // transform: skewY(-5deg);
+  // z-index: 10000;
+
+  // .rest-img {
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  //   transform: skewY(5deg);
+  // }
+
+  &::before {
+    content: "";
+    background: inherit;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    // 画像の端までぼけてしまうため切り落とすため
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+  }
+
+  .rest-title {
+    color: rgb(231, 243, 212);
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 21rem;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    @include middle();
+    text-shadow: 0 0 10px #333;
   }
 }
 
@@ -555,16 +588,11 @@ section + section {
 .music {
   padding: 0;
   height: 100%;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: 100vw;
-  // height: 100vh;
 
   .music_wr {
     position: relative;
     width: 100vw;
-    height: 200vh;
+    height: 290vh;
     overflow: hidden;
 
     video {
@@ -598,12 +626,13 @@ section + section {
 
       // disc section
       .disc {
-        padding-top: 9rem;
+        padding-top: 11rem;
 
         .disc-item {
           position: relative;
           overflow: hidden;
           width: 10%;
+          height: 13rem;
           margin-left: 1.2rem;
           margin-bottom: 0.7rem;
 
@@ -618,19 +647,19 @@ section + section {
           a > img {
             transition: all 0.25s ease;
             width: 100%;
-            height: auto;
+            // 要検討
+            // height: auto;
+            height: 12.7rem;
             object-fit: cover;
           }
 
           .overlay {
-            // @include overlay(rgba(37, 39, 71, 0.7));
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(64, 67, 104, 0.7);
-            // padding: 30px;
             @include middle();
             opacity: 0;
             transition: all 0.3s ease;
@@ -645,6 +674,19 @@ section + section {
             p {
               text-align: center;
             }
+          }
+        }
+      }
+
+      // video section
+      .video {
+        padding-top: 8rem;
+
+        .video-item {
+          iframe {
+            width: 36rem;
+            height: 20rem;
+            margin-left: 1rem;
           }
         }
       }
