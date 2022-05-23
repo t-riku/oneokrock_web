@@ -592,7 +592,7 @@ section + section {
   .music_wr {
     position: relative;
     width: 100vw;
-    height: 310vh;
+    height: 290vh;
     overflow: hidden;
 
     video {
@@ -683,15 +683,14 @@ section + section {
         padding-top: 8rem;
 
         .video-item {
+          margin-left: 1rem;
           img {
             width: 36rem;
-            height: 20rem;
-            margin-left: 1rem;
+            height: 21rem;
           }
           iframe {
             width: 36rem;
-            height: 20rem;
-            margin-left: 1rem;
+            height: 21rem;
           }
         }
       }
@@ -744,6 +743,22 @@ section + section {
       a {
         font-size: 1.2rem;
         left: 3.5rem;
+      }
+    }
+  }
+
+  // music section
+  .music {
+    .music_wr {
+      .music-ttl {
+        // disc section
+        .disc {
+          .disc-item {
+            width: 10%;
+            height: 11.5rem;
+          }
+        }
+        // video section
       }
     }
   }
@@ -806,14 +821,31 @@ section + section {
 
   // music section
   .music {
-    // disc section
-    .disc {
-      .disc-item {
-        width: 10%;
-        height: 10rem;
+    .music_wr {
+      height: 215rem;
+      .music-ttl {
+        // disc section
+        .disc {
+          .disc-item {
+            width: 10%;
+            height: 9.5rem;
+          }
+        }
+        // video section
+        .video {
+          .video-item {
+            img {
+              width: 29rem;
+              height: 17rem;
+            }
+            iframe {
+              width: 29rem;
+              height: 17rem;
+            }
+          }
+        }
       }
     }
-    // video section
   }
 }
 
@@ -863,6 +895,35 @@ section + section {
       a {
         font-size: 1.4rem;
         left: 4rem;
+      }
+    }
+  }
+
+  // music section
+  .music {
+    .music_wr {
+      height: 200rem;
+      .music-ttl {
+        // disc section
+        .disc {
+          .disc-item {
+            width: 12%;
+            height: 8.5rem;
+          }
+        }
+        // video section
+        .video {
+          .video-item {
+            img {
+              width: 23rem;
+              height: 13.5rem;
+            }
+            iframe {
+              width: 23rem;
+              height: 13.5rem;
+            }
+          }
+        }
       }
     }
   }
@@ -920,6 +981,36 @@ section + section {
         font-size: 1.2rem;
         left: 3rem;
         padding: 0.8rem 0 !important;
+      }
+    }
+  }
+
+  // music section
+  .music {
+    .music_wr {
+      height: 185rem;
+      .music-ttl {
+        // disc section
+        .disc {
+          .disc-item {
+            width: 14%;
+            height: 7.5rem;
+          }
+        }
+        // video section
+        .video {
+          .video-item {
+            margin-left: 0.4rem;
+            img {
+              width: 19rem;
+              height: 12rem;
+            }
+            iframe {
+              width: 19rem;
+              height: 12rem;
+            }
+          }
+        }
       }
     }
   }
@@ -999,6 +1090,36 @@ section + section {
       }
     }
   }
+
+  // music section
+  .music {
+    .music_wr {
+      height: 170rem;
+      .music-ttl {
+        // disc section
+        .disc {
+          .disc-item {
+            width: 14%;
+            height: 7rem;
+          }
+        }
+        // video section
+        .video {
+          .video-item {
+            margin-left: 0.4rem;
+            img {
+              width: 16rem;
+              height: 10rem;
+            }
+            iframe {
+              width: 16rem;
+              height: 10rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // スマホ版
@@ -1065,6 +1186,35 @@ section + section {
       a {
         font-size: 1.3rem;
         left: 3rem;
+      }
+    }
+  }
+
+  // music section
+  .music {
+    .music_wr {
+      .music-ttl {
+        // disc section
+        .disc {
+          .disc-item {
+            width: 16%;
+            height: 6rem;
+          }
+        }
+        // video section
+        .video {
+          .video-item {
+            margin-left: 0.4rem;
+            img {
+              width: 13rem;
+              height: 8rem;
+            }
+            iframe {
+              width: 13rem;
+              height: 8rem;
+            }
+          }
+        }
       }
     }
   }
