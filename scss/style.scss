@@ -592,7 +592,7 @@ section + section {
   .music_wr {
     position: relative;
     width: 100vw;
-    height: 290vh;
+    height: 310vh;
     overflow: hidden;
 
     video {
@@ -649,7 +649,7 @@ section + section {
             width: 100%;
             // 要検討
             // height: auto;
-            height: 12.7rem;
+            height: 100%;
             object-fit: cover;
           }
 
@@ -683,6 +683,11 @@ section + section {
         padding-top: 8rem;
 
         .video-item {
+          img {
+            width: 36rem;
+            height: 20rem;
+            margin-left: 1rem;
+          }
           iframe {
             width: 36rem;
             height: 20rem;
@@ -797,6 +802,18 @@ section + section {
         left: 3rem;
       }
     }
+  }
+
+  // music section
+  .music {
+    // disc section
+    .disc {
+      .disc-item {
+        width: 10%;
+        height: 10rem;
+      }
+    }
+    // video section
   }
 }
 
