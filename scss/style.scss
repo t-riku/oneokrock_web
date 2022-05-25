@@ -578,7 +578,6 @@ section + section {
     line-height: 21rem;
     text-align: center;
     display: inline-block;
-    margin: 0 auto;
     @include middle();
     text-shadow: 0 0 10px #333;
   }
@@ -696,6 +695,11 @@ section + section {
       }
     }
   }
+}
+
+// restLink section
+.link {
+  background-image: url(/images/oneokrock04.jpg);
 }
 
 /* contact section */
