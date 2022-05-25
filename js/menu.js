@@ -38,6 +38,15 @@ menuToggle.addEventListener("click", function () {
 //   }
 // });
 
+// const aa = document.querySelector(".toppage-box.active");
+
+// aa.addEventListener("click", (e) => {
+//   if (!e.target.classList.contains("active")) {
+//     //ここに外側をクリックしたときの処理
+//     menuToggle.classList.remove("active");
+//     topPage.classList.remove("active");
+//   }
+// });
 // topPage.addEventListener("click", (e) => {
 //   if (!e.target.closest(".toggle")) {
 //     //ここに外側をクリックしたときの処理

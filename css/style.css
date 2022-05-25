@@ -71,7 +71,7 @@ section + section {
   right: 0;
   width: 100%;
   height: 100%;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .toppage .toppage-box.active {
   position: absolute;
