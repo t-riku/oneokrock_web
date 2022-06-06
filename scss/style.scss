@@ -69,7 +69,38 @@ section + section {
 // toppage section
 .toppage {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+
+  &.active {
+    z-index: 1;
+  }
+
+  .toggle {
+    position: absolute;
+    background: url(/images/menu.png);
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+    z-index: 10000;
+    right: 3rem;
+    top: 30px;
+
+    &.active {
+      // activeがつくと画像を変える
+      background: url(/images/close.png);
+      width: 60px;
+      height: 60px;
+      background-repeat: no-repeat;
+      background-size: 30px;
+      background-position: center;
+      cursor: pointer;
+      color: #000;
+      right: 32.8rem;
+    }
+  }
   .toppage-box {
     background-color: #ccc;
     //   display: flex;
@@ -99,12 +130,13 @@ section + section {
       left: 0;
       width: 100%;
       z-index: 1000;
-      padding-right: 35px;
 
       .up-btn,
       .mute-btn {
         font-size: 3rem;
         cursor: pointer;
+        padding-top: 8px;
+        padding-right: 100px;
       }
 
       .up-btn {
@@ -121,26 +153,26 @@ section + section {
         }
       }
 
-      .toggle {
-        background: url(/images/menu.png);
-        width: 60px;
-        height: 60px;
-        background-repeat: no-repeat;
-        background-size: 30px;
-        background-position: center;
-        cursor: pointer;
+      // .toggle {
+      //   background: url(/images/menu.png);
+      //   width: 60px;
+      //   height: 60px;
+      //   background-repeat: no-repeat;
+      //   background-size: 30px;
+      //   background-position: center;
+      //   cursor: pointer;
 
-        &.active {
-          // activeがつくと画像を変える
-          background: url(/images/close.png);
-          width: 60px;
-          height: 60px;
-          background-repeat: no-repeat;
-          background-size: 30px;
-          background-position: center;
-          cursor: pointer;
-        }
-      }
+      //   &.active {
+      //     // activeがつくと画像を変える
+      //     background: url(/images/close.png);
+      //     width: 60px;
+      //     height: 60px;
+      //     background-repeat: no-repeat;
+      //     background-size: 30px;
+      //     background-position: center;
+      //     cursor: pointer;
+      //   }
+      // }
     }
 
     video {
@@ -292,12 +324,12 @@ section + section {
   right: 0;
   width: 300px;
   height: 100%;
-  z-index: 1;
+  z-index: -2;
   @include middle();
   background-color: #fff;
 
   &.active {
-    z-index: 2;
+    z-index: 3;
   }
 
   ul {

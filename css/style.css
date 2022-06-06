@@ -63,7 +63,34 @@ section + section {
 
 .toppage {
   position: relative;
-  z-index: 2;
+  z-index: 3;
+}
+.toppage.active {
+  z-index: 1;
+}
+.toppage .toggle {
+  position: absolute;
+  background: url(/images/menu.png);
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+  z-index: 10000;
+  right: 3rem;
+  top: 30px;
+}
+.toppage .toggle.active {
+  background: url(/images/close.png);
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+  color: #000;
+  right: 32.8rem;
 }
 .toppage .toppage-box {
   background-color: #ccc;
@@ -94,12 +121,13 @@ section + section {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding-right: 35px;
 }
 .toppage .toppage-box header .up-btn,
 .toppage .toppage-box header .mute-btn {
   font-size: 3rem;
   cursor: pointer;
+  padding-top: 8px;
+  padding-right: 100px;
 }
 .toppage .toppage-box header .up-btn {
   display: none;
@@ -112,24 +140,6 @@ section + section {
 }
 .toppage .toppage-box header .mute-btn.muted {
   display: none;
-}
-.toppage .toppage-box header .toggle {
-  background: url(/images/menu.png);
-  width: 60px;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-size: 30px;
-  background-position: center;
-  cursor: pointer;
-}
-.toppage .toppage-box header .toggle.active {
-  background: url(/images/close.png);
-  width: 60px;
-  height: 60px;
-  background-repeat: no-repeat;
-  background-size: 30px;
-  background-position: center;
-  cursor: pointer;
 }
 .toppage .toppage-box video {
   position: absolute;
@@ -267,7 +277,7 @@ section + section {
   right: 0;
   width: 300px;
   height: 100%;
-  z-index: 1;
+  z-index: -2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,7 +285,7 @@ section + section {
   /*現在地とhoverの設定*/
 }
 .menu.active {
-  z-index: 2;
+  z-index: 3;
 }
 .menu ul {
   font-size: 24px;
