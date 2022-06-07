@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ONE OK ROCK</title>
+
+    <!-- bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,15 +17,20 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- scss -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- modaalWindow css -->
+    <link rel="stylesheet" href="css/modal.css" />
 
     <!-- youtube高速化 -->
-    <script src="/js/youtube.js" type="text/javascript"></script>
-    <link href="/css/youtube.css" rel="stylesheet" type="text/css" />
+    <script src="js/youtube.js" type="text/javascript"></script>
+    <link href="./css/youtube.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <!-- toppage section -->
-    <section class="toppage vh-100 w-100">
+    <section class="toppage vh-100 w-100" id="home">
       <div class="toggle"></div>
       <div class="toppage-box">
         <header
@@ -35,7 +42,7 @@
           <!-- <div class="toggle"></div> -->
         </header>
         <!-- <video
-          src="/images/完全感覚Dreamer LIVE MIX_480p.mp4"
+          src="./images/完全感覚Dreamer LIVE MIX_480p.mp4"
           webkit-playsinline
           playsinline
           muted
@@ -44,7 +51,7 @@
           class="videoVolume"
         ></video> -->
         <video
-          src="/images/完全感覚Dreamer LIVE MIX_480p.mp4"
+          src="./images/完全感覚Dreamer LIVE MIX_480p.mp4"
           muted
           class="videoVolume"
         ></video>
@@ -70,7 +77,7 @@
               ></a>
             </li>
             <li>
-              <a href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
+              <a href="https://www.tiktok.com/@oneokrock_official"
                 ><i class="bi bi-tiktok" art="tiktok"></i
               ></a>
             </li>
@@ -101,7 +108,7 @@
     </section>
     <div class="menu">
       <ul class="gnavi">
-        <li class="current"><a href="index.html">HOME</a></li>
+        <li class="current"><a href="#home">HOME</a></li>
         <li><a href="#bio">BIO</a></li>
         <li><a href="#team">TEAM</a></li>
         <li><a href="#news">NEWS</a></li>
@@ -152,45 +159,53 @@
         <div class="row g-3 mt-3">
           <div class="col-lg-3 col-sm-6 text-center">
             <div class="team-member card-effect">
-              <img src="/images/taka.jpg" alt="" />
+              <img src="./images/taka.jpg" alt="" />
               <h5 class="mb-0 mt-4">TAKA</h5>
               <p>Vocals</p>
               <p>1988.4.17/TOKYO</p>
               <div class="insta-icon mt-3">
-                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.instagram.com/10969taka/?hl=ja"
+                  ><i class="bi bi-instagram"></i
+                ></a>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-sm-6 text-center">
             <div class="team-member card-effect">
-              <img src="/images/toru.jpg" alt="" />
+              <img src="./images/toru.jpg" alt="" />
               <h5 class="mb-0 mt-4">TORU</h5>
               <p>Guitars</p>
               <p>1988.12.7/OSAKA</p>
               <div class="insta-icon mt-3">
-                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.instagram.com/toru_10969/?hl=ja"
+                  ><i class="bi bi-instagram"></i
+                ></a>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-sm-6 text-center">
             <div class="team-member card-effect">
-              <img src="/images/ryota.jpg" alt="" />
+              <img src="./images/ryota.jpg" alt="" />
               <h5 class="mb-0 mt-4">RYOTA</h5>
               <p>Bass</p>
               <p>1989.9.4/OSAKA</p>
               <div class="insta-icon mt-3">
-                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.instagram.com/ryota_0809/?hl=ja"
+                  ><i class="bi bi-instagram"></i
+                ></a>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-sm-6 text-center">
             <div class="team-member card-effect">
-              <img src="/images/tomoya.jpg" alt="" />
+              <img src="./images/tomoya.jpg" alt="" />
               <h5 class="mb-0 mt-4">TOMOYA</h5>
               <p>Drums</p>
               <p>1987.6.27/HYOGO</p>
               <div class="insta-icon mt-3">
-                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.instagram.com/tomo_10969/?hl=ja"
+                  ><i class="bi bi-instagram"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -211,7 +226,7 @@
         <div class="row g-4 mt-3">
           <div class="col-lg-4 col-sm-6">
             <div class="news-item card-effect">
-              <img src="/images/summerSonic.jpg" alt="" />
+              <img src="./images/summerSonic.jpg" alt="" />
               <div class="d-flex justify-content-between mt-4">
                 <h5 class="pt-2 pe-2">SUMMER SONIC 2022</h5>
                 <div class="icon-box">
@@ -225,12 +240,98 @@
                 Tokyo : ZOZOMARINE STADIUM & MAKUHARI MESSE Osaka : MAISHIMA
                 SONIC PARK
               </p>
-              <a href="#" class="btn btn-outline-dark py-3 px-4 mt-4">More</a>
+              <a
+                data-micromodal-trigger="modal-01-01"
+                class="btn btn-outline-dark py-3 px-4 mt-4"
+                >More</a
+              >
             </div>
           </div>
+          <div
+            class="modal micromodal-slide"
+            id="modal-01-01"
+            aria-hidden="true"
+          >
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+              <div
+                class="modal__container"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-1-title"
+              >
+                <header class="modal__header">
+                  <h2 class="modal__title" id="modal-1-title">
+                    SUMMER SONIC 2022
+                  </h2>
+                  <button
+                    class="modal__close"
+                    aria-label="Close modal"
+                    data-micromodal-close
+                  ></button>
+                </header>
+                <main class="modal__content" id="modal-1-content">
+                  <img src="./images/summerSonic.jpg" alt="" class="mb-4" />
+                  <p>2022.02.15</p>
+                  <ul>
+                    <li>
+                      SUMMER SONIC 2022 にONE OK ROCKの出演決定!!<br />
+                      8.20sat / 21sun<br />
+                      Tokyo : ZOZOMARINE STADIUM & MAKUHARI MESSE<br />
+                      Osaka : MAISHIMA SONIC PARK<br />
+                      <a href="https://www.summersonic.com/"
+                        >www.summersonic.com</a
+                      >
+                    </li>
+                    <li>
+                      Listen:<br />
+                      <a href="https://www.tiktok.com/@oneokrock_official"
+                        ><i class="bi bi-tiktok" art="tiktok"></i
+                      ></a>
+                      <a href="https://www.youtube.com/user/ONEOKROCKchannel"
+                        ><i class="bi bi-youtube" art="youtube"></i
+                      ></a>
+                      <a
+                        href="https://music.apple.com/jp/artist/one-ok-rock/252239625?app=itunes"
+                        ><i
+                          class="bi bi-music-note-beamed"
+                          art="apple music"
+                        ></i
+                      ></a>
+                      <a
+                        href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
+                        ><i class="bi bi-spotify" art="spotify"></i
+                      ></a>
+                    </li>
+                    <li>
+                      Share:<br />
+                      <a href="https://twitter.com/ONEOKROCK_japan"
+                        ><i class="bi bi-twitter"></i
+                      ></a>
+                      <a href="https://www.facebook.com/ONEOKROCK"
+                        ><i class="bi bi-facebook"></i
+                      ></a>
+                      <a href="https://www.instagram.com/oneokrockofficial/"
+                        ><i class="bi bi-instagram"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </main>
+                <footer class="modal__footer">
+                  <button
+                    class="btn btn-outline-dark"
+                    data-micromodal-close
+                    aria-label="Close this dialog window"
+                  >
+                    Close
+                  </button>
+                </footer>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-4 col-sm-6">
             <div class="news-item card-effect">
-              <img src="/images/news02.jpg" alt="" />
+              <img src="./images/news02.jpg" alt="" />
               <div class="d-flex justify-content-between mt-4">
                 <h5 class="pt-2 pe-2">Renegades (Piano)</h5>
                 <div class="icon-box">
@@ -250,7 +351,7 @@
           </div>
           <div class="col-lg-4 col-sm-6">
             <div class="news-item card-effect">
-              <img src="/images/news03.jpg" alt="" />
+              <img src="./images/news03.jpg" alt="" />
               <div class="d-flex justify-content-between mt-4">
                 <h5 class="pt-2 pe-2">
                   「ONE OK ROCK 2021 “Day to Night Acoustic
@@ -269,9 +370,10 @@
               <a href="#" class="btn btn-outline-dark py-3 px-4 mt-4">More</a>
             </div>
           </div>
+
           <div class="col-lg-4 col-sm-6">
             <div class="news-item card-effect">
-              <img src="/images/news06.jpg" alt="" />
+              <img src="./images/news06.jpg" alt="" />
               <div class="d-flex justify-content-between mt-4">
                 <h5 class="pt-2 pe-2">
                   ONE OK ROCK with Orchestra Japan Tour 2018
@@ -289,12 +391,127 @@
                 *前売りチケット;￥7500(税別)
                 *席種；アリーナスタンディング(ブロック指定/整理番号付)
               </p>
-              <a href="#" class="btn btn-outline-dark py-3 px-4 mt-4">More</a>
+              <a
+                data-micromodal-trigger="modal-01-04"
+                class="btn btn-outline-dark py-3 px-4 mt-4"
+                >More</a
+              >
             </div>
           </div>
+          <div
+            class="modal micromodal-slide"
+            id="modal-01-04"
+            aria-hidden="true"
+          >
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+              <div
+                class="modal__container"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-1-title"
+              >
+                <header class="modal__header">
+                  <h2 class="modal__title" id="modal-1-title">
+                    ONE OK ROCK with Orchestra Japan Tour 2018
+                  </h2>
+                  <button
+                    class="modal__close"
+                    aria-label="Close modal"
+                    data-micromodal-close
+                  ></button>
+                </header>
+                <main class="modal__content" id="modal-1-content">
+                  <img src="./images/news06.jpg" alt="" class="mb-5" />
+                  <p>2018.08.01</p>
+                  <ul>
+                    <li>
+                      ONE OK
+                      ROCKがこの秋10月にオーケストラを従えてのライブを開催することが決定!<br />
+
+                      ONE OK ROCK with Orchestra Japan Tour 2018<br />
+
+                      【日程】2018/10/20 (土)<br />
+
+                      【会場】埼玉 : さいたまスーパーアリーナ　OPEN 16:00 /
+                      START 17:00<br />
+
+                      【問い合わせ】SOGO TOKYO 03-3405-9999<br />
+
+                      【日程】2018/10/21 (日)<br />
+
+                      【会場】埼玉 : さいたまスーパーアリーナ　OPEN 15:00 /
+                      START 16:00<br />
+
+                      【問い合わせ】SOGO TOKYO 03-3405-9999<br />
+
+                      【日程】2018/10/30 (火)<br />
+
+                      【会場】大阪 : 大阪城ホール　OPEN 17:30 / START 18:30<br />
+
+                      【問い合わせ】YUMEBANCHI 06-6341-3525<br />
+
+                      【日程】2018/10/31 (水)<br />
+
+                      【会場】大阪 : 大阪城ホール　OPEN 17:30 / START 18:30<br />
+
+                      【問い合わせ】YUMEBANCHI 06-6341-3525<br />
+
+                      ＊前売りチケット:￥7500(税別)<br />
+
+                      ＊席種；アリーナスタンディング(ブロック指定/整理番号付)、スタンド指定<br />
+
+                      ＊アリーナスタンディング　未就学時入場不可
+                    </li>
+                    <li>
+                      Listen:<br />
+                      <a href="https://www.tiktok.com/@oneokrock_official"
+                        ><i class="bi bi-tiktok" art="tiktok"></i
+                      ></a>
+                      <a href="https://www.youtube.com/user/ONEOKROCKchannel"
+                        ><i class="bi bi-youtube" art="youtube"></i
+                      ></a>
+                      <a
+                        href="https://music.apple.com/jp/artist/one-ok-rock/252239625?app=itunes"
+                        ><i
+                          class="bi bi-music-note-beamed"
+                          art="apple music"
+                        ></i
+                      ></a>
+                      <a
+                        href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
+                        ><i class="bi bi-spotify" art="spotify"></i
+                      ></a>
+                    </li>
+                    <li>
+                      Share:<br />
+                      <a href="https://twitter.com/ONEOKROCK_japan"
+                        ><i class="bi bi-twitter"></i
+                      ></a>
+                      <a href="https://www.facebook.com/ONEOKROCK"
+                        ><i class="bi bi-facebook"></i
+                      ></a>
+                      <a href="https://www.instagram.com/oneokrockofficial/"
+                        ><i class="bi bi-instagram"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </main>
+                <footer class="modal__footer">
+                  <button
+                    class="btn btn-outline-dark"
+                    data-micromodal-close
+                    aria-label="Close this dialog window"
+                  >
+                    Close
+                  </button>
+                </footer>
+              </div>
+            </div>
+          </div>
+
           <div class="col-lg-4 col-sm-6">
             <div class="news-item card-effect">
-              <img src="/images/news04.jpg" alt="" />
+              <img src="./images/news04.jpg" alt="" />
               <div class="d-flex justify-content-between mt-4">
                 <h5 class="pt-2 pe-2">
                   映像作品「ONE OK ROCK “EYE OF THE STORM” JAPAN
@@ -316,7 +533,7 @@
           </div>
           <div class="col-lg-4 col-sm-6">
             <div class="news-item card-effect">
-              <img src="/images/news05.jpg" alt="" />
+              <img src="./images/news05.jpg" alt="" />
               <div class="d-flex justify-content-between mt-4">
                 <h5 class="pt-2 pe-2">
                   ONE OK ROCK 2020 "Field of Wonder" at Stadium Live Streaming
@@ -348,7 +565,6 @@
     <section class="music" id="music">
       <div class="music_wr">
         <div class="music-ttl">
-          <!-- <h1 class="text center">動画を背景として表示する</h1> -->
           <div class="container">
             <section class="disc" id="disc">
               <div class="row">
@@ -365,12 +581,128 @@
               </div>
               <div class="row">
                 <div class="d-flex flex-wrap">
-                  <div class="disc-item">
-                    <a href="#"><img src="images/disc_album01.jpg" alt="" /></a>
-                    <div class="overlay">
-                      <div>
-                        <h4>Eye of The Storm</h4>
-                        <p><small>EN/2019</small></p>
+                  <div class="disc-item info-list">
+                    <!-- <a data-micromodal-trigger="modal-1">
+                      <img src="images/disc_album01.jpg" alt="" />
+                    </a> -->
+                    <img src="images/disc_album01.jpg" alt="" />
+
+                    <a data-micromodal-trigger="modal-02-01">
+                      <div class="overlay">
+                        <div>
+                          <h4>Eye of The Storm</h4>
+                          <p><small>EN/2019</small></p>
+                        </div>
+                      </div>
+                    </a>
+
+                    <div
+                      class="modal micromodal-slide"
+                      id="modal-02-01"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal__overlay"
+                        tabindex="-1"
+                        data-micromodal-close
+                      >
+                        <div
+                          class="modal__container"
+                          role="dialog"
+                          aria-modal="true"
+                          aria-labelledby="modal-1-title"
+                        >
+                          <header class="modal__header">
+                            <h2 class="modal__title" id="modal-1-title">
+                              Eye of The Storm
+                            </h2>
+                            <button
+                              class="modal__close"
+                              aria-label="Close modal"
+                              data-micromodal-close
+                            ></button>
+                          </header>
+                          <main class="modal__content" id="modal-1-content">
+                            <img
+                              src="images/disc_album01.jpg"
+                              alt=""
+                              class="mb-4"
+                            />
+                            <p>3rd Album in US</p>
+                            <ul>
+                              <li>
+                                Label : bud music<br />
+                                Cat No : budlp03<br />
+                                format : LP<br />
+                                Price : 3,400yen+tax<br />
+                                Release : 2019.02.15
+                              </li>
+                              <li>
+                                Track List:<br />
+                                01 ; Eye of the Storm<br />
+                                02. Stand Out Fit In<br />
+                                03. Head High<br />
+                                04. Grow Old Die Young<br />
+                                05. Push Back<br />
+                                06. Wasted Nights<br />
+                                07. Change<br />
+                                08. Letting Go<br />
+                                09. Worst in Me<br />
+                                10. In the Stars (feat Kiiara)<br />
+                                11. Giants<br />
+                                12. Unforgettable<br />
+                                13. The Last Time
+                              </li>
+                              <li>
+                                Listen:<br />
+                                <a
+                                  href="https://www.tiktok.com/@oneokrock_official"
+                                  ><i class="bi bi-tiktok" art="tiktok"></i
+                                ></a>
+                                <a
+                                  href="https://www.youtube.com/user/ONEOKROCKchannel"
+                                  ><i class="bi bi-youtube" art="youtube"></i
+                                ></a>
+                                <a
+                                  href="https://music.apple.com/jp/artist/one-ok-rock/252239625?app=itunes"
+                                  ><i
+                                    class="bi bi-music-note-beamed"
+                                    art="apple music"
+                                  ></i
+                                ></a>
+                                <a
+                                  href="https://open.spotify.com/artist/7k73EtZwoPs516ZxE72KsO"
+                                  ><i class="bi bi-spotify" art="spotify"></i
+                                ></a>
+                              </li>
+                              <li>
+                                Share:<br />
+                                <a href="https://twitter.com/ONEOKROCK_japan"
+                                  ><i class="bi bi-twitter"></i
+                                ></a>
+                                <a href="https://www.facebook.com/ONEOKROCK"
+                                  ><i class="bi bi-facebook"></i
+                                ></a>
+                                <a
+                                  href="https://www.instagram.com/oneokrockofficial/"
+                                  ><i class="bi bi-instagram"></i
+                                ></a>
+                              </li>
+                            </ul>
+                          </main>
+                          <footer class="modal__footer">
+                            <!-- <button class="modal__btn modal__btn-primary">
+                              Continue
+                            </button> -->
+                            <button
+                              class="btn btn-outline-dark"
+                              data-micromodal-close
+                              aria-label="Close this dialog window"
+                            >
+                              Close
+                            </button>
+                          </footer>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -926,14 +1258,17 @@
     <!-- footer section -->
     <section class="footer">
       <div class="container">
-        <!-- <div class="d-flex justify-content-center py-5">
-          <a href="#top"
-            ><img src="./images/dhu_logo.svg" alt="" class="navbar-brand"
+        <div class="d-flex justify-content-center py-5">
+          <a href="#home"
+            ><img
+              src="./images/oneokrock__icon.png"
+              alt=""
+              class="navbar-brand"
           /></a>
-        </div> -->
+        </div>
         <div class="row pb-5">
           <ul class="d-flex justify-content-center gnavi">
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="#home">HOME</a></li>
             <li><a href="#bio">BIO</a></li>
             <li><a href="#team">TEAM</a></li>
             <li><a href="#news">NEWS</a></li>
@@ -950,10 +1285,20 @@
 
     <script src="js/menu.js"></script>
     <script src="js/wave.js"></script>
+    <!-- bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
+    ></script>
+    <!-- modalWindow js -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="js/modal.js"></script>
+    <!-- IE対応 -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      script
+      src="https://unpkg.com/micromodal/dist/micromodal.min.js"
     ></script>
   </body>
 </html>
